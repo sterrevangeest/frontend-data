@@ -1,0 +1,10 @@
+body {
+  font-family: system-ui;
+  text-align: justify;
+  padding: 2em 15em;
+  line-height: 1.5;
+}
+
+h1 {
+  text-align: center;
+}
