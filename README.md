@@ -19,7 +19,7 @@ So, for this datavisualization I need the following data from the API: `year` in
 
 I want the datavisualization look like this: ![sketch](img/sketch.png)
 
-This sketch is inspired by: ![sketch](img/sceenshotInsp.png)
+This sketch is inspired by: ![screenshot](img/screenshotInsp.png)
 
 ## Hypothesis
 
