@@ -17,13 +17,13 @@ For this datavisualization I decided to compare all book genres throughout the y
 
 So, for this datavisualization I need the following data from the API: `year` in which the book is published , `genre` of the book and `count` in genre.
 
-#### Hypothesis
+## Hypothesis
 
-### The datavisualization
+# The datavisualization
 
 Schets!
 
-## Dank voor:
+# Sources
 
-- De [Cheatsheet](https://github.com/DanielvandeVelde/functional-programming#cheatsheet) van Daniel.
-- Het [node-oba-api](https://github.com/rijkvanzanten/node-oba-api) pakketje van Rijk.
+- This [Cheatsheet](https://github.com/DanielvandeVelde/functional-programming#cheatsheet) by Daniel.
+- This [node-oba-api](https://github.com/rijkvanzanten/node-oba-api) package by Rijk.
