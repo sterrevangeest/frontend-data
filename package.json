@@ -12,9 +12,15 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^6.1.0",
+    "file-system": "^2.2.2",
     "oba-api": "github:rijkvanzanten/node-oba-api"
   },
   "devDependencies": {
     "nodemon": "^1.18.5"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "data.json"
+    ]
   }
 }
