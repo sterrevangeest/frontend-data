@@ -1,6 +1,6 @@
 # Frontend Data
 
-During this [Frontend Data](https://github.com/cmda-tt/course-18-19/tree/master/frontend-data) course, I made an interactive datavisualization using D3 and the [OBA](https://www.oba.nl) [API](https://zoeken.oba.nl/api/v1/). This course is a follow-up on
+During this [Frontend Data](https://github.com/cmda-tt/course-18-19/tree/master/frontend-data) course, I made an interactive datavisualization using D3 and the [OBA](https://www.oba.nl) [API](https://zoeken.oba.nl/api/v1/).
 
 **screenshot from datavis**
 
