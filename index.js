@@ -19,22 +19,10 @@ const client = new OBA({
 // Client returns a promise which resolves the APIs output in JSON
 
 var allData = [];
-// 00 = nederlands , 01 = engels, 02 = frans, 03 = duits, 04 = spaans, 05 = ara/arabisch, 06 = turks
-var selectedRctx = [
-  "AWNkYOZmYGcwLDJKNUmuSK3KKMzLKTbMSM82TspISco3YmZk4MxNzMxjZGaQzEnMSy9NTE$1SiktYWRkls6ML0pNLi5ILSoACrIaGTAx3DvJtO8gIxAxfdnByqhxaBIjswcDA3t$UiIDA4OiflF$fol$TmZhaWaKPlCMvbQoh4E1L4cRAA==",
-  "AWNkYOZmYGcwLDJKNUmuSK3KKMzLKTbMSM82TspISco3YmZk4MxNzMxjZGaQzEnMSy9NTE$1Ss1LZ2Rkls6ML0pNLi5ILSoACrIaGTAxTDjBdO0AIxAxXdvOyqhxZyIjswcDA3t$UiIDA4OiflF$fol$TmZhaWaKPlCMvbQoh4E1L4cRAA==",
-  "AWNkYOZmYGcwLDJKNUmuSK3KKMzLKTbMSM82TspISco3YmZk4MxNzMxjZGaQzEnMSy9NTE$1SitKZWRkls6ML0pNLi5ILSoACrIaGTAxPDvJdOggIxAx@dnByqhxbBIjswcDA3t$UiIDA4OiflF$fol$TmZhaWaKPlCMvbQoh4E1L4cRAA==",
-  "AWNkYOZmYGcwLDJKNUmuSK3KKMzLKTbMSM82TspISco3YmZk4MxNzMxjZGaQzEnMSy9NTE$1Sk8tYmRkls6ML0pNLi5ILSoACrIaGTAxLDrFdO8gIxAxbdrJyqjxYBIjswcDA3t$UiIDA4OiflF$fol$TmZhaWaKPlCMvbQoh4E1L4cRAA==",
-  "AQ3IMQ7CIBQA0P9LGmI8gXFyc8Oik0tXdw9goCVAikB@JTGe0CM0poexb3wIbAscGpLm0r3Nx40xTI2zw1m7XifJEDZP5SMy2AUVbVHWXKesENneP8h0UzaU16zlqYKF5nZuq$WLePzd2Q2AJ60A4CAopZcIfiy$F$vxQgHqGPAP",
-  "AWNkYOZmYGcwLDJKNUmuSK3KKMzLKTbMSM82TspISco3YmZk4MxNzMxjZGaQzEnMSy9NTE$1SixKZGRkls6ML0pNLi5ILSoACrIaGTAxrCtucWhxYDp3kpFRY1IIswcDA3t$UiIDA4OiflF$fol$TmZhaWaKPlCMvbQoh4E1L4cRAA==",
-  "AWNkYOZmYGcwLDJKNUmuSK3KKMzLKTbMSM82TspISco3YmZk4MxNzMxjZGaQzEnMSy9NTE$1KiktYmRkls6ML0pNLi5ILSoACrIaGTAx3Cme5jDNgWndKUZGjSUhzB4MDOz5SYkMDAyK$kX5$SX6OZmFpZkp$kAx9tKiHAbWvBxGAA=="
-];
-
-var genreCount = [];
 
 client
   .get(
-    // vraag alle boeken op
+    // get all books
     "search",
     {
       q: "format:book",
@@ -45,39 +33,73 @@ client
   )
   .then(response => JSON.parse(response).aquabrowser)
   .then(response => {
-    selectedRctx.forEach(function(selectedRctx) {
+    var selectedRctx = [];
+    var selectedYears = [];
+
+    var years = getYears(selectedYears);
+
+    selectedYears.forEach(function(years) {
       client
-        .get("refine", {
-          rctx: selectedRctx,
-          count: 100
+        .get("search", {
+          q: years,
+          librarian: true,
+          refine: true
         })
         .then(response => JSON.parse(response).aquabrowser)
         .then(response => {
-          var genreFacet = getGenreFacet(response);
+          var rctx = response.meta.rctx;
+          selectedRctx.push(rctx);
+
+          if (selectedRctx.length == 11) {
+            selectedRctx.forEach(function(selectedRctx) {
+              client
+                .get("refine", {
+                  rctx: selectedRctx,
+                  count: 100
+                })
+                .then(response => JSON.parse(response).aquabrowser)
+                .then(response => {
+                  var genreFacet = getGenreFacet(response);
+                });
+            });
+          }
         });
     });
   })
 
   .catch(err => console.log(err)); // Something went wrong in the request to the API
 
+function getYears(selectedYears) {
+  var period = 50;
+
+  for (var i = 0; i <= period; i = i + 5) {
+    var year = "year:" + (1965 + i);
+    selectedYears.push(year);
+  }
+}
+
 function getGenreFacet(data) {
   var languageId = data.meta["original-query"];
+  var year = languageId.slice(6, 10);
   var facets = data.facets.facet;
 
   facets.forEach(function(facets) {
     var facetId = facets.id;
     if (facetId === "Genre") {
       var values = facets.value;
-
-      allData.push({
-        languageId,
-        counts: values
-      });
-
-      var allDataJson = JSON.stringify(allData);
-      fs.writeFileSync("data.json", allDataJson, err => {
-        if (err) throw err;
-        console.log("All data written to file");
+      values.forEach(function(values) {
+        var count = values.count;
+        var id = values.id;
+        allData.push({
+          year: year,
+          genre: id,
+          count: count
+        });
+        var allDataJson = JSON.stringify(allData);
+        fs.writeFileSync("data.json", allDataJson, err => {
+          if (err) throw err;
+          console.log("All data written to data.json");
+        });
       });
     }
   });
