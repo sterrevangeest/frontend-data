@@ -19,7 +19,7 @@ So, for this datavisualization I need the following data from the API: `year` in
 
 I want the datavisualization look like this: ![sketch](img/sketch.png)
 
-Before I started sketching I looked for inspiration. My sketch is inspired by: ![screenshot](img/screenshotInsp.png)
+Before I started sketching I looked for inspiration. My sketch is inspired by: ![screenshot](img/insp.png)
 
 > [Marital Status by Age](https://flowingdata.com/2016/12/08/marital-status-by-age/)
 
