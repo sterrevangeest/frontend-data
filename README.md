@@ -17,11 +17,9 @@ For this datavisualization I decided to compare all book genres throughout the y
 
 So, for this datavisualization I need the following data from the API: `year` in which the book is published , `genre` of the book and `count` in genre.
 
-I want the datavisualization look like this: ![sketch](img/sketch.png)
+I want the datavisualization look like this: ![sketch](img/wireframe.png)
 
-Before I started sketching I looked for inspiration. My sketch is inspired by: ![screenshot](img/insp.png)
-
-> [Marital Status by Age](https://flowingdata.com/2016/12/08/marital-status-by-age/)
+> Uitleg over wat je hier ziet!
 
 ## Hypothesis
 
