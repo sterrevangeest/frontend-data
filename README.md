@@ -6,6 +6,8 @@ Voor het vak [Frontend Data](https://github.com/cmda-tt/course-18-19/tree/master
 
 Tijdens het vak [Functional Programming](https://github.com/cmda-tt/course-18-19/tree/master/functional-programming) heb ik al onderzoek gedaan naar de data in de API. Voor deze datavisualisatie heb ik gefocust op alle **biografieën** in de collectie van de OBA, in het bijzonder: over wie worden er biografieën geschreven, mannen of vrouwen?
 
+# Data ophalen
+
 Voor het ophalen heb ik in ieder geval de volgende data nodig: **publicatie jaar** van het boek, **auteur** en het **geslacht** van hoofdpersoon in het boek.
 
 Ik gebruik daarvoor de volgende keys uit de API:
@@ -15,6 +17,8 @@ Ik gebruik daarvoor de volgende keys uit de API:
 - `title` in _title_ staat ook de **auteur** van het boek (achter de **/** )
 
 Omdat het ook interessant kan zijn om bijvoorbeeld erachter te komen of mannen over mannen en vrouwen over vrouwen of juist niet, heb ik ook een `Url` van de auteur gemaakt, zodat ik deze kan gebruiken met een Wikipedia URL, bijvoorbeeld op [deze](https://medium.freecodecamp.org/the-ultimate-guide-to-web-scraping-with-node-js-daa2027dcd3) manier. (Ben hiermee begonnen maar heb geen tijd meer gehad om dit af te maken.)
+
+### De data
 
 De data structuur komt er dan per boek zo uit te zien:
 
@@ -31,6 +35,7 @@ De data structuur komt er dan per boek zo uit te zien:
 ```
 
 > Bekijk alle data in [data/allData.json](https://github.com/sterrevangeest/frontend-data/blob/master/data/allData.json).
+
 > Bekijk hoe ik dit gedaan heb in [data/index.js](https://github.com/sterrevangeest/frontend-data/blob/master/data/index.js)
 
 <!-- So, for this datavisualization I need the following data from the API: `year` in which the book is published , `genre` of the book and `count` in genre. -->
