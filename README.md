@@ -4,7 +4,7 @@
 
 Voor het vak [Frontend Data](https://github.com/cmda-tt/course-18-19/tree/master/frontend-data) maakte ik van data, uit de [OBA](https://www.oba.nl) [API](https://zoeken.oba.nl/api/v1/), een interactieve datavisualisatie met behulp van D3.js
 
-AFBEELDINGGGGGGGGGGGGGGGG
+![screenshot](img/screenshot.png)
 
 ## Onderzoek
 
@@ -46,17 +46,20 @@ De data structuur komt er dan per boek zo uit te zien:
 
 Ik verwacht dat de visualisatie er ongeveer zo uit gaat zien: ![sketch](img/wireframe.png)
 
-> Door snel door de data te scannen ontdekte ik dat de OBA relatief heel weinig biografieên heeft van voor het jaar 2000. Ik verwacht dat over het algemeen er meer biografieên over mannen zijn geschreven. Toch hoop iets bijzonders te zien in de verhouding tussen mannen en vrouwen. Om het verschil tussen mannen en vrouwen overzichtelijker te maken wil ik de grafiek in absolute en relatieve waardes laten zien.
+> Door snel door de data te scannen ontdekte ik dat de OBA relatief heel weinig biografieên heeft van voor het jaar 2000. Ik verwacht dat over het algemeen er meer biografieên over mannen zijn geschreven. Toch hoop iets bijzonders te zien in de verhouding tussen mannen en vrouwen. Om het verschil tussen mannen en vrouwen overzichtelijker te maken wil ik de grafiek in absolute (links) en relatieve (rechts) waardes laten zien.
 
 ## De visualisatie
 
-### Clean code, functional programming en leerpunten
+### Struggles en leerpunten
 
-Ik dacht dat het makkelijk zou zijn als ik ongeveer dezelfde data als in het vorige vak zou gebruiken, ik sneller met D3 kon beginnen. Maar achteraf ben ik blij dat ik dieper in de data gedoken ben. Daardoor heb ik o.a.:
+Ik dacht dat het makkelijk zou zijn als ik ongeveer dezelfde data als in het vorige vak zou gebruiken, zodat ik sneller met D3 kon beginnen. Maar achteraf ben ik blij dat ik dieper in de data gedoken ben. Daardoor heb ik o.a.:
 
 - een veel interessanter onderwerp gevonden, wat leuker is om aan te werken.
-- veel meer geleerd en gebruik gemaakt over `Array.prototype.map()` en `Array.prototype.map()`
+- veel meer geleerd over en gebruik gemaakt van `Array.prototype.map()` en `Array.prototype.map()`
+- dankzij Justus beter mijn bestand in leren delen
 - ~~geleerd dat je nooit `console.log(error)` kwijt moet raken~~
+
+Hierdoor uiteindelijk wel minder tijd kunnen besteden aan het leren van D3. Dat vind ik dan wel weer jammer. Ik heb het idee dat ik nog meer functionaliteit uit D3 had kunnen halen dan ik nu gedaan heb.
 
 ## Dankjewel:
 
