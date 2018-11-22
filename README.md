@@ -4,11 +4,13 @@
 
 Voor het vak [Frontend Data](https://github.com/cmda-tt/course-18-19/tree/master/frontend-data) maakte ik van data, uit de [OBA](https://www.oba.nl) [API](https://zoeken.oba.nl/api/v1/), een interactieve datavisualisatie met behulp van D3.js
 
-# Onderzoek
+AFBEELDINGGGGGGGGGGGGGGGG
+
+## Onderzoek
 
 Tijdens het vak [Functional Programming](https://github.com/cmda-tt/course-18-19/tree/master/functional-programming) heb ik al onderzoek gedaan naar de data in de API. Voor deze datavisualisatie heb ik gefocust op alle **biografieën** in de collectie van de OBA, in het bijzonder: over wie worden er biografieën geschreven, over mannen of vrouwen?
 
-# Data ophalen
+## Data ophalen
 
 Voor het ophalen heb ik in ieder geval de volgende data nodig: **publicatie jaar** van het boek, **auteur** en het **geslacht** van hoofdpersoon in het boek.
 
@@ -46,9 +48,17 @@ Ik verwacht dat de visualisatie er ongeveer zo uit gaat zien: ![sketch](img/wire
 
 > Door snel door de data te scannen ontdekte ik dat de OBA relatief heel weinig biografieên heeft van voor het jaar 2000. Ik verwacht dat over het algemeen er meer biografieên over mannen zijn geschreven. Toch hoop iets bijzonders te zien in de verhouding tussen mannen en vrouwen. Om het verschil tussen mannen en vrouwen overzichtelijker te maken wil ik de grafiek in absolute en relatieve waardes laten zien.
 
-# De visualisatie
+## De visualisatie
 
-# Dankjewel:
+### Clean code, functional programming en leerpunten
+
+Ik dacht dat het makkelijk zou zijn als ik ongeveer dezelfde data als in het vorige vak zou gebruiken, ik sneller met D3 kon beginnen. Maar achteraf ben ik blij dat ik dieper in de data gedoken ben. Daardoor heb ik o.a.:
+
+- een veel interessanter onderwerp gevonden, wat leuker is om aan te werken.
+- veel meer geleerd en gebruik gemaakt over `Array.prototype.map()` en `Array.prototype.map()`
+- ~~geleerd dat je nooit `console.log(error)` kwijt moet raken~~
+
+## Dankjewel:
 
 - De [Cheatsheet](https://github.com/DanielvandeVelde/functional-programming#cheatsheet) van Daniel.
 - Het [node-oba-api](https://github.com/rijkvanzanten/node-oba-api) pakketje van Rijk.
