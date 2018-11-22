@@ -164,8 +164,7 @@ function getRelativeChart(relativeSum) {
       .append("div")
       .style("position", "absolute")
       .style("z-index", "10")
-      .style("visibility", "hidden")
-      .text(Math.round(data) + "%");
+      .style("visibility", "hidden");
 
     var mRect = d3
       .select(groups[index])
@@ -175,7 +174,9 @@ function getRelativeChart(relativeSum) {
       .attr("width", 35)
       .attr("x", margin.left - margin.right + (svgWidth / 20) * index)
       .on("mouseover", function() {
-        return tooltip.style("visibility", "visible");
+        return tooltip
+          .style("visibility", "visible")
+          .text(Math.round(100 - data) + "%");
       })
       .on("mousemove", function() {
         return tooltip
@@ -194,7 +195,10 @@ function getRelativeChart(relativeSum) {
       .attr("width", 35)
       .attr("x", margin.left - margin.right + (svgWidth / 20) * index)
       .on("mouseover", function() {
-        return tooltip.style("visibility", "visible");
+        return tooltip
+          .style("visibility", "visible")
+
+          .text(Math.round(data) + "%");
       })
       .on("mousemove", function() {
         return tooltip
