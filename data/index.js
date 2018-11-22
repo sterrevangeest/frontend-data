@@ -1,23 +1,6 @@
 const OBA = require("oba-api");
 var fs = require("file-system");
 
-// const rp = require("request-promise");
-// const $ = require("cheerio");
-// const url = "https://en.wikipedia.org/wiki/Anchee_Min";
-//
-// rp(url)
-//   .then(function(html) {
-//     //success!
-//     const wikiUrls = [];
-//     for (let i = 0; i < 45; i++) {
-//       wikiUrls.push($(".firstHeading", html)[i].attribs.href);
-//     }
-//     console.log(wikiUrls);
-//   })
-//   .catch(function(err) {
-//     //handle error
-//   });
-
 require("dotenv").config();
 
 // Setup authentication to api server
@@ -34,7 +17,7 @@ const client = new OBA({
 
 // Client returns a promise which resolves the APIs output in JSON
 
-// for (var i = 0; i < 56; i++) {
+// for (var i = 0; i < 61; i++) { //API can't handle this for loop
 client
   .get(
     // get all books
@@ -50,13 +33,11 @@ client
   .then(response => {
     var data = getData(response);
   })
-  .catch(err => console.error(err));
-// Something went wrong in the request to the API
-//}
+  .catch(err => console.error(err)); // Something went wrong in the request to the API
+// }
 
 function getData(response) {
   var result = response.results.result;
-
   var author = getAuthor(result);
   var title = getTitle(result);
   var summary = getSummary(result);
@@ -73,8 +54,6 @@ function getData(response) {
       gender: gender[i],
       authorUrl: authorUrl[i]
     };
-    // console.log(dataStore);
-    console.log("gelukt");
   });
 
   var allDataJson = JSON.stringify(dataStore);
@@ -87,12 +66,11 @@ function getAuthor(result) {
   var authorsAndTitles = result.map(result => result.titles.title["$t"]);
   var authors = authorsAndTitles.map(authorsAndTitles => {
     if (authorsAndTitles == undefined) {
-      return "no title";
+      return "noTitle";
     } else {
       return authorsAndTitles.split(" / ").pop();
     }
   });
-
   return authors;
 }
 
@@ -100,9 +78,9 @@ function getTitle(result) {
   var authorsAndTitles = result.map(result => result.titles.title["$t"]);
   var title = authorsAndTitles.map(authorsAndTitles => {
     if (authorsAndTitles == undefined) {
-      return "no au";
+      return "noAuthor";
     } else {
-      return authorsAndTitles.split(" / ").pop();
+      return authorsAndTitles.split(" / ").shift();
     }
   });
   return title;
@@ -116,7 +94,7 @@ function getSummary(result) {
       }
       return summary.summary["$t"];
     } else if (summary == undefined) {
-      return "GEEN SAMENVATTING";
+      return "noSummary";
     }
   });
   return summaryTexts;
@@ -124,10 +102,14 @@ function getSummary(result) {
 
 function getPublicationYear(result) {
   var publicationYear = result.map(result => {
-    if (publicationYear === undefined) {
-      return "noPublicationYear";
+    var publicationYear = result.publication.publishers.publisher.year;
+    if (publicationYear !== undefined) {
+      var publicationYear = parseInt(
+        result.publication.publishers.publisher.year.replace(/\D/g, "")
+      );
+      return publicationYear;
     } else {
-      parseInt(result.publication.publishers.publisher.year.replace(/\D/g, ""));
+      return "noPublicationYear";
     }
   });
   return publicationYear;
@@ -148,7 +130,7 @@ function getGender(summary) {
     ) {
       return "male";
     } else {
-      return "unknown";
+      return "noGender";
     }
   });
   return gender;
@@ -161,8 +143,7 @@ function makeAuthorUrl(author) {
       author.charCodeAt(0) === author.toUpperCase().charCodeAt(0) &&
       author.length < 35
     ) {
-      var allAuthors = author;
-      var urlAuthor = allAuthors.replace(/ /g, "_");
+      var urlAuthor = author.replace(/ /g, "_");
     } else {
       var urlAuthor = "noURL";
     }
@@ -172,3 +153,20 @@ function makeAuthorUrl(author) {
 }
 
 // TODO: use authorURL for Wikipedia API request, to check gender of author
+
+// const rp = require("request-promise");
+// const $ = require("cheerio");
+// const url = "https://en.wikipedia.org/wiki/Anchee_Min";
+//
+// rp(url)
+//   .then(function(html) {
+//     //success!
+//     const wikiUrls = [];
+//     for (let i = 0; i < 45; i++) {
+//       wikiUrls.push($(".firstHeading", html)[i].attribs.href);
+//     }
+//     console.log(wikiUrls);
+//   })
+//   .catch(function(err) {
+//     //handle error
+//   });
