@@ -2,7 +2,7 @@
 
 Voor het vak [Frontend Data](https://github.com/cmda-tt/course-18-19/tree/master/frontend-data) maakte ik van data, uit de [OBA](https://www.oba.nl) [API](https://zoeken.oba.nl/api/v1/), een interactieve datavisualisatie met behulp van D3.js
 
-# Research
+# Onderzoek
 
 Tijdens het vak [Functional Programming](https://github.com/cmda-tt/course-18-19/tree/master/functional-programming) heb ik al onderzoek gedaan naar de data in de API. Voor deze datavisualisatie heb ik gefocust op alle **biografieën** in de collectie van de OBA, in het bijzonder: over wie worden er biografieën geschreven, mannen of vrouwen?
 
@@ -30,7 +30,8 @@ De data structuur komt er dan per boek zo uit te zien:
 },
 ```
 
-Bekijk alle data in [data/allData.json](https://github.com/sterrevangeest/frontend-data/blob/master/data/allData.json).
+> Bekijk alle data in [data/allData.json](https://github.com/sterrevangeest/frontend-data/blob/master/data/allData.json).
+> Bekijk hoe ik dit gedaan heb in [data/index.js](https://github.com/sterrevangeest/frontend-data/blob/master/data/index.js)
 
 <!-- So, for this datavisualization I need the following data from the API: `year` in which the book is published , `genre` of the book and `count` in genre. -->
 
