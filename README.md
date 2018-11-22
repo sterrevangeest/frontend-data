@@ -6,6 +6,8 @@ Voor het vak [Frontend Data](https://github.com/cmda-tt/course-18-19/tree/master
 
 ![screenshot](img/screenshot.png)
 
+> Bekijk het eindresultaat op [sterrevangeest.nl](http://sterrevangeest.nl/frontend-data-web/#)
+
 ## Onderzoek
 
 Tijdens het vak [Functional Programming](https://github.com/cmda-tt/course-18-19/tree/master/functional-programming) heb ik al onderzoek gedaan naar de data in de API. Voor deze datavisualisatie heb ik gefocust op alle **biografieën** in de collectie van de OBA, in het bijzonder: over wie worden er biografieën geschreven, over mannen of vrouwen?
@@ -47,10 +49,6 @@ De data structuur komt er dan per boek zo uit te zien:
 Ik verwacht dat de visualisatie er ongeveer zo uit gaat zien: ![sketch](img/wireframe.png)
 
 > Door snel door de data te scannen ontdekte ik dat de OBA relatief heel weinig biografieên heeft van voor het jaar 2000. Ik verwacht dat over het algemeen er meer biografieên over mannen zijn geschreven. Toch hoop iets bijzonders te zien in de verhouding tussen mannen en vrouwen. Om het verschil tussen mannen en vrouwen overzichtelijker te maken wil ik de grafiek in absolute (links) en relatieve (rechts) waardes laten zien.
-
-## De visualisatie
-
-Bekijk de datavisualisatie op [sterrevangeest.nl](http://sterrevangeest.nl/)
 
 ## Struggles en leerpunten
 
