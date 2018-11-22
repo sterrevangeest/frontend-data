@@ -50,7 +50,7 @@ Ik verwacht dat de visualisatie er ongeveer zo uit gaat zien: ![sketch](img/wire
 
 ## De visualisatie
 
-Bekijk de datavisualisatie op (sterrevangeest.nl)[http://sterrevangeest.nl/]
+Bekijk de datavisualisatie op [sterrevangeest.nl](http://sterrevangeest.nl/)
 
 ## Struggles en leerpunten
 
