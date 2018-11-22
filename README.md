@@ -50,7 +50,9 @@ Ik verwacht dat de visualisatie er ongeveer zo uit gaat zien: ![sketch](img/wire
 
 ## De visualisatie
 
-### Struggles en leerpunten
+Bekijk de datavisualisatie op (sterrevangeest.nl)[http://sterrevangeest.nl/]
+
+## Struggles en leerpunten
 
 Ik dacht dat het makkelijk zou zijn als ik ongeveer dezelfde data als in het vorige vak zou gebruiken, zodat ik sneller met D3 kon beginnen. Maar achteraf ben ik blij dat ik dieper in de data gedoken ben. Daardoor heb ik o.a.:
 
@@ -59,9 +61,9 @@ Ik dacht dat het makkelijk zou zijn als ik ongeveer dezelfde data als in het vor
 - dankzij Justus beter mijn bestand in leren delen
 - ~~geleerd dat je nooit `console.log(error)` kwijt moet raken~~
 
-Hierdoor uiteindelijk wel minder tijd kunnen besteden aan het leren van D3. Dat vind ik dan wel weer jammer. Ik heb het idee dat ik nog meer functionaliteit uit D3 had kunnen halen dan ik nu gedaan heb.
+Hierdoor heb ik wel het idee dat ik uiteindelijk minder tijd heb kunnen besteden aan het leren van D3 dan ik had gewild. Dat vind ik dan wel weer jammer. Ik heb het idee dat ik nog meer functionaliteit uit D3 had kunnen halen dan ik nu gedaan heb.
 
-## Dankjewel:
+## Dankjewel 🆘
 
 - De [Cheatsheet](https://github.com/DanielvandeVelde/functional-programming#cheatsheet) van Daniel.
 - Het [node-oba-api](https://github.com/rijkvanzanten/node-oba-api) pakketje van Rijk.
