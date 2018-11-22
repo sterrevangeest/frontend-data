@@ -1,7 +1,7 @@
 body {
   font-family: system-ui;
-  //text-align: justify;
-  padding: 2em 10em;
+  //  text-align: justify;
+  padding: 2em 15em;
   line-height: 1.5;
   color: black;
 }
@@ -10,22 +10,20 @@ select {
 }
 
 h1 {
-  //text-align: center;
+  text-align: center;
 }
 .bar-chart {
   //background-color: #efefef;
 }
 
-/* g.xAxis text {
-  //  transform: rotate(-90deg);
-} */
-
-p {
-  padding-bottom: 3em;
+p:last-of-type {
+  padding-bottom: 10em;
 }
 
-a {
+a#relative,
+a#absolute {
   display: inline-block;
+  width: 10%;
   background-color: black;
   margin: 1em 0;
   padding: 0.2em 1em;
@@ -34,4 +32,16 @@ a {
   color: white;
   border: 0.08em solid black;
   border-radius: 0.1em;
+
+  font-size: 0.8em;
+}
+svg {
+  display: block;
+  stroke-width: 0px;
+}
+h2 {
+  padding-top: 3em;
+}
+a {
+  color: orange;
 }
